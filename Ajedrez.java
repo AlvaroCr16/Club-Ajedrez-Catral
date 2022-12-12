@@ -14,7 +14,7 @@ public class Ajedrez {
         System.out.println("¿¿Dónde quieres situar la pieza??(Recuerda que el tablero es 8x8, A-H y 1-8, Ej:B6,C2,G8...)");
         Scanner sc2 = new Scanner(System.in);
         String posicioninicial = sc2.nextLine();
-
+return "";
     }
 
 
