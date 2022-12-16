@@ -35,33 +35,41 @@ public class tablero {
         }
         return "";
     }
-    public static String Rey(String pos) {
-        String num = "12345678";
-        String letras = "abcdefgh";
-        String mov = "";
+
+    public static String Caballo(String[][] tab2, String pos2) {
+        String p = "";
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                if (posicion.equals(tab[i][j])) {
-                    for (int o = 0; o < letras.length(); o++) {
-                            if (letras.charAt(o) == pos.charAt(0)) {
-                                    mov += letras.charAt(o + 1);
-                            }
-                        }
-                    for (int u = 0; u < num.length(); u++) {
-                        if (num.charAt(u) == pos.charAt(1)) {
-                            mov += num.charAt(u + 1);
-                        }
-                    }
+                p = tab2[i][j];
+                if (p.charAt(0) == pos2.charAt(0) && p.charAt(1) == pos2.charAt(1)){
+                    System.out.println("El Caballo se puede mover hacia " + tab2[i - 1][j - 2] + ", " + tab2[i + 1][j - 2] + ", " + tab2[i - 2][j - 1] + ", " + tab2[i + 2][j - 1] + ", " + tab2[i - 2][j + 1] + ", " + tab2[i + 2][j + 1] + ", " + tab2[i - 1][j + 2] + ", " + tab2[i + 1][j + 2]);
                 }
+
             }
         }
-        System.out.println(mov);
         return "";
+    }
+
+    public static String Rey(String[][] tab3, String position) {
+        String d = "";
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                d = tab3[i][j];
+                if (d.charAt(0) == position.charAt(0) && d.charAt(1) == position.charAt(1)){
+                    System.out.println("El Rey se puede mover hacia " + tab3[i - 1][j + 1] + ", " + tab3[i][j + 1] + ", " + tab3[i + 1][j + 1] + ", " + tab3[i - 1][j - 1] + ", " + tab3[i][j - 1] + ", " + tab3[i + 1][j - 1] + ", " + tab3[i - 1][j] + ", " + tab3[i + 1][j]);
+                }
+
+            }
+        }
+        return " ";
     }
 
     public static void main(String[] args) {
         RecorrerArray(tab);
-        Rey(posicion);
+        Caballo(tab, posicion);
+        Rey(tab, posicion);
+
+
     }
 }
 
